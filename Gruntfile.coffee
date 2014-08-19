@@ -1,8 +1,13 @@
 config =
-  jsx:
-    client:
-      src: 'app/react/src/components.jsx'
-      dest: 'public/js/components.js'
+  browserify:
+    options:
+      transform: [ require('grunt-react').browserify ]
+    files:
+      expand: true,
+      cwd: 'app/react/src',
+      src: ['**/*.js'],
+      dest: 'public/js',
+      ext: '.js'
 
   coffee:
     app:
@@ -16,6 +21,9 @@ config =
     scripts:
       files: ['server/**/*.coffee'],
       tasks: ['coffee']
+    browserify:
+      files: ['app/react/src/*.js'],
+      tasks: ['browserify']
 
 module.exports = (grunt) ->
 
@@ -23,4 +31,4 @@ module.exports = (grunt) ->
 
   grunt.initConfig(config)
 
-  grunt.registerTask('default', ['jsx', 'coffee'])
+  grunt.registerTask('default', ['coffee', 'browserify'])
