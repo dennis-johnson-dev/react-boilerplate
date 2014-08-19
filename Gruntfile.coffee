@@ -9,8 +9,11 @@ config =
       dest: 'public/js',
       ext: '.js'
 
+  clean:
+    public: ['public/js']
+
   coffee:
-    app:
+    server:
       expand: true,
       cwd: 'server/src',
       src: ['**/*.coffee'],
@@ -18,7 +21,7 @@ config =
       ext: '.js'
 
   watch:
-    scripts:
+    server:
       files: ['server/**/*.coffee'],
       tasks: ['coffee']
     browserify:
@@ -31,4 +34,4 @@ module.exports = (grunt) ->
 
   grunt.initConfig(config)
 
-  grunt.registerTask('default', ['coffee', 'browserify'])
+  grunt.registerTask('default', ['coffee', 'clean', 'browserify'])
