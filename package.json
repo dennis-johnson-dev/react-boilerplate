@@ -4,7 +4,7 @@
   "description": "This repo provides the setup for a basic web app using React.js, Node.js, Express.js, and Grunt.js.",
   "main": "server.js",
   "scripts": {
-    "start": "grunt build"
+    "start": "nodemon server/gen/server.js"
   },
   "dependencies": {
     "nodemon": "^1.2.0",
@@ -12,7 +12,7 @@
     "grunt-cli": "~0.1.8",
     "express": "4.x",
     "body-parser": "^1.2.0",
-    "load-grunt-tasks": "^0.6.0" 
+    "load-grunt-tasks": "^0.6.0"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/songawee/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/songawee/react-boilerplate"
+  "homepage": "https://github.com/songawee/react-boilerplate",
+  "devDependencies": {
+    "body-parser": "^1.6.5",
+    "grunt-contrib-coffee": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsx": "^0.1.8"
+  }
 }
