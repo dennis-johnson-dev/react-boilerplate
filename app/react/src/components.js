@@ -12,7 +12,6 @@ var CommentBox = React.createClass({
     return (
       <div className="commentBox">
         <h1>Comments</h1>
-        <p>Hello, world! Shit yes.</p>
         <CommentList data={this.props.data} />
       </div>
     );
