@@ -13,3 +13,5 @@ $ npm install
 ````bash
 $ grunt && grunt watch
 ````
+
+Visit [http://localhost:3000](http://localhost:3000)
