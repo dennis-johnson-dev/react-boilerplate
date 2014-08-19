@@ -1,0 +1,27 @@
+{
+  "name": "react-boilerplate",
+  "version": "0.0.0",
+  "description": "This repo provides the setup for a basic web app using React.js, Node.js, Express.js, and Grunt.js.",
+  "main": "server.js",
+  "scripts": {
+    "start": "grunt build"
+  },
+  "dependencies": {
+    "nodemon": "^1.2.0",
+    "grunt": "~0.4.0",
+    "grunt-cli": "~0.1.8",
+    "express": "4.x",
+    "body-parser": "^1.2.0",
+    "load-grunt-tasks": "^0.6.0" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/songawee/react-boilerplate.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/songawee/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/songawee/react-boilerplate"
+}
