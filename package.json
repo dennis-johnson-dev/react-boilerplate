@@ -4,7 +4,7 @@
   "description": "This repo provides the setup for a basic web app using React.js, Node.js, Express.js, and Grunt.js.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server/gen/server.js"
+    "start": "grunt start"
   },
   "dependencies": {
     "nodemon": "^1.2.0",
@@ -28,10 +28,12 @@
     "body-parser": "^1.6.5",
     "browserify": "^5.10.0",
     "grunt-browserify": "^2.1.4",
+    "grunt-concurrent": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-coffee": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jsx": "^0.1.8",
+    "grunt-nodemon": "^0.3.0",
     "grunt-react": "^0.9.0",
     "react": "^0.11.1",
     "reactify": "^0.14.0"

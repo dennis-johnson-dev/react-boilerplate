@@ -3,8 +3,8 @@
 var React = require('react')
 
 var data = [
-  {author: 'Author 1', text: 'text'},
-  {author: 'Author 2', text: 'moar text'}
+  {author: 'Author 1', text: 'text area'},
+  {author: 'Author 2', text: 'more text'}
 ];
 
 var CommentBox = React.createClass({

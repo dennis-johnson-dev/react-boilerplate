@@ -1,4 +1,5 @@
 config =
+
   browserify:
     options:
       transform: [ require('grunt-react').browserify ]
@@ -20,7 +21,21 @@ config =
       dest: 'server/gen/',
       ext: '.js'
 
+  concurrent:
+    target:
+      tasks: ['nodemon', 'watch'],
+      options:
+        logConcurrentOutput: true
+
+  nodemon:
+    dev:
+      script: 'server/gen/server.js'
+      options:
+        ignore: ['node_modules/**']
+
   watch:
+    options:
+      livereload: true
     server:
       files: ['server/**/*.coffee'],
       tasks: ['coffee']
@@ -35,3 +50,4 @@ module.exports = (grunt) ->
   grunt.initConfig(config)
 
   grunt.registerTask('default', ['coffee', 'clean', 'browserify'])
+  grunt.registerTask('start', ['default', 'concurrent:target'])
