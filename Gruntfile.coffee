@@ -1,14 +1,17 @@
 config =
-
-  browserify:
-    options:
-      transform: [ require('grunt-react').browserify ]
-    files:
-      expand: true,
-      cwd: 'app/react/src',
-      src: ['**/*.js'],
-      dest: 'public/js',
-      ext: '.js'
+  react:
+    bundle:
+      files:
+        'public/js/bundle.js': [
+          'app/react/src/components.jsx',
+          'app/react/src/app.jsx'
+        ]
+    components:
+      files:
+        'public/js/components.js': 'app/react/src/components.jsx'
+    spec:
+      files:
+        'spec/gen/server-spec.js': 'spec/server/server-spec.jsx'
 
   clean:
     public: ['public/js']
@@ -39,9 +42,12 @@ config =
     server:
       files: ['server/**/*.coffee'],
       tasks: ['coffee']
-    browserify:
-      files: ['app/react/src/*.js'],
-      tasks: ['browserify']
+    react:
+      files: ['app/react/src/*.jsx'],
+      tasks: ['react:bundle', 'react:components']
+    test:
+      files: ['spec/server/*.jsx'],
+      tasks: ['react:spec']
 
 module.exports = (grunt) ->
 
@@ -49,5 +55,6 @@ module.exports = (grunt) ->
 
   grunt.initConfig(config)
 
-  grunt.registerTask('default', ['coffee', 'clean', 'browserify'])
-  grunt.registerTask('start', ['default', 'concurrent:target'])
+  grunt.registerTask('default', ['coffee', 'clean', 'react'])
+  grunt.registerTask('start', ['default', 'concurrent'])
+  grunt.registerTask('test', ['react', 'watch'])
