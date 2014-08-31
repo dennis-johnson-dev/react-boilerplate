@@ -11,7 +11,14 @@ $ npm install
 ### Development
 
 ````bash
-$ grunt && grunt watch
+$ npm start 
+````
+
+### Testing
+
+````bash
+$ grunt test
+$ karma start
 ````
 
 Visit [http://localhost:3000](http://localhost:3000)
