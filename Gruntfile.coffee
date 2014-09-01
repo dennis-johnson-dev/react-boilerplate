@@ -3,12 +3,12 @@ config =
     bundle:
       files:
         'public/js/bundle.js': [
-          'app/react/src/components.jsx',
-          'app/react/src/app.jsx'
+          'app/src/components.jsx',
+          'app/src/app.jsx'
         ]
     components:
       files:
-        'public/js/components.js': 'app/react/src/components.jsx'
+        'public/js/components.js': 'app/src/components.jsx'
     spec:
       files:
         'spec/gen/server-spec.js': 'spec/server/server-spec.jsx'

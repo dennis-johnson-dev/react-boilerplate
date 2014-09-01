@@ -4,7 +4,7 @@
 var App = React.createClass({
   render: function() {
     return (
-      <CommentBox />
+      <CheckboxWithLabel labelOn="On" labelOff="Off" />
     );
   }
 });
